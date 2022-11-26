@@ -1,0 +1,13 @@
+org: tomaaas
+app: rimac-connectivity-platform
+service: rimac-connectivity-platform
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+
+functions:
+  hello:
+    handler: indexTeamA.hello

@@ -1,3 +1,7 @@
+'use strict';
+
+module.exports.hello = async (event) => {
+  
 require('dotenv').config()
 const mqtt = require('mqtt')
 // const mysql = require('mysql')
@@ -33,9 +37,24 @@ client.on('connect', function () {
 })
 
 client.on('message', function (topic, message) {
-    console.log("i have received: " + message.toString() + " from topic: " + topic.toString())
-    // con.end()
+    let response = "i have received: " + message.toString() + " from topic: " + topic.toString();
     client.end()
+    return {
+        statusCode: 200,
+        body: JSON.stringify(
+          {
+            message: response,
+            input: event,
+          },
+          null,
+          2
+        ),
+      };
+    // con.end()
 })
 // });
+
+};
+
+
 
