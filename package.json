@@ -1,0 +1,16 @@
+{
+  "name": "mqtt-example",
+  "version": "1.0.0",
+  "description": "practice for mqtt broker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mislav",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "mqtt": "^4.3.7",
+    "mysql": "^2.18.1"
+  }
+}
