@@ -6,14 +6,16 @@ const options = {
     port: process.env.PORT,
     protocol: 'mqtts',
     username: process.env.USER,
-    password: process.env.PASSWORD
+    password: process.env.PASSWORD,
+    // clientId: 'oqrkwopfk',
+    // clean: false
 }
 
 const client = mqtt.connect(options);
 
 client.on('connect', function () {
     console.log("Connected...")
-    client.subscribe('rimacMobileTeam/1')
+    client.subscribe('rimacMobileTeam/1', { qos: 2 })
 })
 
 client.on('message', function (topic, message) {
